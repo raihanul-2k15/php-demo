@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 if (isset($_SESSION['flash'])):
 ?>
 <div class="text-center alert alert-primary alert-dismissible fade show" role="alert">

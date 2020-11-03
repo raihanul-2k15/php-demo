@@ -4,9 +4,6 @@ class AddSnippetController
 {
     public function get()
     {
-        if (isset($_SESSION['flash'])) {
-            die('chinga');
-        }
         require 'views/add_snippet.php';
     }
     public function post()
@@ -21,6 +18,7 @@ class AddSnippetController
 
         $snip->save();
 
+        session_start();
         $_SESSION['flash'] = "Success! Snippet saved.";
         header('Location: /add_snippet');
     }
